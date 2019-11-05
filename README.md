@@ -16,6 +16,7 @@ If you want to use...
 - Python 3.6, use base.
 - Python 3.5, use ius.
 - Python 3.4, use ius (epel).
+- Other versons, use pyenv.
 
 OK, but why?
 
@@ -42,7 +43,47 @@ OK, but why?
 - pyenv
     - Any version is available.
 
+| version | base/ius | pyenv |
+| --- | --- | --- |
+| 3.7.4 | - |  |
+| 3.6.8 | 457MB |  |
+| 3.5.6 |  |  |
+| 3.4.8 |  |  |
+
 ### Alpine Linux
 
 - Use official images.
     - https://hub.docker.com/_/python
+
+## Installation
+
+### base/ius
+
+```bash
+# clone repo
+$ git clone https://github.com/junion-org/docker-python.git
+
+# use base
+$ cd base/
+
+# or use ius
+$ cd ius/
+
+# build image
+# ex) $ docker build -t python:3.5.6-centos7 .
+$ docker build -t IMAGE:TAG .
+```
+
+### pyenv
+
+```bash
+# clone repo
+$ git clone https://github.com/junion-org/docker-python.git
+
+# use pyenv
+$ cd pyenv/
+
+# build image
+# ex) $ docker build --build-arg python_version=3.7.4 -t python:3.6.8-centos7 .
+$ docker build --build-arg python_version=VERSION -t IMAGE:TAG .
+```
