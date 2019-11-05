@@ -15,7 +15,7 @@ If you want to use...
 - Python 3.7, use pyenv.
 - Python 3.6, use base.
 - Python 3.5, use ius.
-- Python 3.4, use ius (epel).
+- Python 3.4, use epel.
 - Other versons, use pyenv.
 
 OK, but why?
@@ -32,7 +32,9 @@ OK, but why?
         - Package python34u is obsoleted by python34, trying to install python34-3.4.10-4.el7.x86_64 (epel) instead
         - Package python36u is obsoleted by python3, trying to install python3-3.6.8-10.el7.x86_64 (base) instead
     ```
-    $ yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+    $ yum install \
+    https://repo.ius.io/ius-release-el7.rpm \
+    https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     $ yum list --showduplicates | grep python34u-devel
     python34u-devel.x86_64                    3.4.8-1.ius.el7                ius
     $ yum list --showduplicates | grep python35u-devel
@@ -43,11 +45,11 @@ OK, but why?
 - pyenv
     - Any version is available.
 
-| version | base/ius | pyenv |
+| version | base / ius / epel | pyenv |
 | --- | --- | --- |
 | 3.7.4 | - |  |
 | 3.6.8 | 457MB |  |
-| 3.5.6 |  |  |
+| 3.5.6 | 426MB |  |
 | 3.4.8 |  |  |
 
 ### Alpine Linux
@@ -57,21 +59,18 @@ OK, but why?
 
 ## Installation
 
-### base/ius
+### base / ius / epel
 
 ```bash
 # clone repo
 $ git clone https://github.com/junion-org/docker-python.git
 
-# use base
+# cd to the directory where you want: base, ius, or epel
 $ cd base/
 
-# or use ius
-$ cd ius/
-
 # build image
-# ex) $ docker build -t python:3.5.6-centos7 .
-$ docker build -t IMAGE:TAG .
+# $ docker build -t IMAGE:TAG .
+$ docker build -t python:3.6.8-centos7 .
 ```
 
 ### pyenv
@@ -80,10 +79,10 @@ $ docker build -t IMAGE:TAG .
 # clone repo
 $ git clone https://github.com/junion-org/docker-python.git
 
-# use pyenv
+# cd to pyenv
 $ cd pyenv/
 
 # build image
-# ex) $ docker build --build-arg python_version=3.7.4 -t python:3.7.4-centos7 .
-$ docker build --build-arg python_version=VERSION -t IMAGE:TAG .
+# $ docker build --build-arg python_version=VERSION -t IMAGE:TAG .
+$ docker build --build-arg python_version=3.7.4 -t python:3.7.4-centos7 .
 ```
