@@ -84,6 +84,6 @@ $ git clone https://github.com/junion-org/docker-python.git
 $ cd pyenv/
 
 # build image
-# ex) $ docker build --build-arg python_version=3.7.4 -t python:3.6.8-centos7 .
+# ex) $ docker build --build-arg python_version=3.7.4 -t python:3.7.4-centos7 .
 $ docker build --build-arg python_version=VERSION -t IMAGE:TAG .
 ```
