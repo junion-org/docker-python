@@ -28,13 +28,16 @@ OK, but why?
     python3-devel.x86_64                         3.6.8-10.el7               base
     ```
 - ius
-    - Python 3.4.8 (epel), 3.5.6 (ius), and 3.6.8 (base) are available.
+    - Python 3.4.10 (epel), 3.5.6 (ius), and 3.6.8 (base) are available.
         - Package python34u is obsoleted by python34, trying to install python34-3.4.10-4.el7.x86_64 (epel) instead
         - Package python36u is obsoleted by python3, trying to install python3-3.6.8-10.el7.x86_64 (base) instead
     ```
     $ yum install \
     https://repo.ius.io/ius-release-el7.rpm \
     https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    $ yum list --showduplicates | grep python34-devel
+    python34-devel.x86_64                     3.4.10-3.el7.ius               ius
+    python34-devel.x86_64                     3.4.10-4.el7                   epel
     $ yum list --showduplicates | grep python34u-devel
     python34u-devel.x86_64                    3.4.8-1.ius.el7                ius
     $ yum list --showduplicates | grep python35u-devel
@@ -50,7 +53,7 @@ OK, but why?
 | 3.7.4 | - |  |
 | 3.6.8 | 457MB |  |
 | 3.5.6 | 426MB |  |
-| 3.4.8 |  |  |
+| 3.4.10 | 410MB |  |
 
 ### Alpine Linux
 
