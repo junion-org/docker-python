@@ -47,13 +47,14 @@ OK, but why?
     ```
 - pyenv
     - Any version is available.
+    - The image size is bigger than the others.
 
 | version | base / ius / epel | pyenv |
 | --- | --- | --- |
-| 3.7.4 | - |  |
-| 3.6.8 | 457MB |  |
-| 3.5.6 | 426MB |  |
-| 3.4.10 | 410MB |  |
+| 3.7.4 | - | 699MB |
+| 3.6.8 | 457MB | 688MB |
+| 3.5.6 | 426MB | 685MB |
+| 3.4.10 | 410MB | 656MB |
 
 ### Alpine Linux
 
