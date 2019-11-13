@@ -4,6 +4,10 @@ Dockerfile for Python
 
 The locale and time zone are set for the Japanese environment.
 
+## Docker Hub
+
+https://hub.docker.com/repository/docker/junionorg/python
+
 ## Versions
 
 Checked on November 5th, 2019.
