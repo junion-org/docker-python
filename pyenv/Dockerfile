@@ -14,17 +14,21 @@ RUN set -x \
         gcc \
         git \
         make \
-        zlib-devel \
+        bzip2 \
         bzip2-devel \
+        gdbm-devel \
+        libffi-devel \
+        libuuid-devel \
+        ncurses \
+        ncurses-devel \
+        openssl \
+        openssl-devel \
         readline-devel \
         sqlite-devel \
-        openssl-devel \
         tk-devel \
-        libffi-devel \
-        ncurses-devel \
-        libxml2-devel \
-        gdbm-devel \
-        libuuid-devel \
+        xz \
+        xz-devel \
+        zlib-devel \
     && git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT \
     && echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc \
     && eval "$(pyenv init -)" \
